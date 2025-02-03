@@ -7,7 +7,10 @@ module.exports = async (req, res, next) => {
     if (user.role !== "admin") {
       return res
         .status(401)
-        .json({ message: "Unauthorized - You need to be an admin to perform this action!" });
+        .json({
+          message:
+            "Unauthorized - You need to be an admin to perform this action!",
+        });
     }
 
     next();
